@@ -1,0 +1,12 @@
+.card {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 5px;
+  transition: all .4s linear;
+  transform-style: preserve-3d;
+}
+
+.selected {
+  transform: rotateY(180deg);
+}

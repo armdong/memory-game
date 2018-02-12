@@ -4,12 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Memory Game</title>
-  <link rel="stylesheet" href="assets/css/game.css">
-  <link rel="icon" type="image/png" href="assets/img/mushroom.png">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <link rel="icon" type="image/png" href="<%= htmlWebpackPlugin.options.favicon %>">
 </head>
 <body>
-  <div id="game"></div>
-  <script src="assets/js/game.js"></script>
+  <div id="root"></div>
 </body>
 </html>

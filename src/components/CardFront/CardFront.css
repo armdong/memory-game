@@ -1,0 +1,11 @@
+.front {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: #FAB942 url('../../assets/question.gif') no-repeat center center / contain;
+  backface-visibility: hidden;
+}
+
+.match .front {
+  background: transparent;
+}
