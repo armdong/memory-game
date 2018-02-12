@@ -5,6 +5,7 @@
   "main": "index.js",
   "repository": "git@github.com:armdong/memory-game.git",
   "author": "armdong <armdong@163.com>",
+  "homepage": "https://armdong.github.io/memory-game-react/",
   "license": "MIT",
   "private": true,
   "scripts": {
