@@ -73,13 +73,13 @@ class CardList extends Component {
     }
 
     this.setState(prevState => ({
-      cards: [...prevState.cards].map(card =>
-        card.id === id
-          ? {...card, selected: true}
-          : card
-      )
+      cards: [...prevState.cards].map(card => card.id === id ? {...card, selected: true} : card)
     }), () => {
+
+      // callback after set the card as selected
       const { count } = this.state
+
+      // if first selected, break
       if (count === 1) {
         return false
       }
@@ -87,17 +87,25 @@ class CardList extends Component {
       // verify current taget has the same name as previous or not
       const prevCard = cards.find(card => card.id === previousGuess)
       const currentCard = cards.find(card => card.id === id)
+
       if (prevCard.name === currentCard.name) {
+
+        // Aha! you got it, set the selected cards as match and remove the selected state
         setTimeout(() => {
           this.setState(prevState => ({
             cards: [...prevState.cards].map(card =>
-              (card.id === prevCard.id || card.id === currentCard.id) ? {...card, match: true, selected: false} : card
+              (card.id === prevCard.id || card.id === currentCard.id)
+                ? {...card, match: true, selected: false}
+                : card
             ),
             count: 0,
             previousGuess: null
           }))
         }, delay)
+
       } else {
+
+        // Sorry, you are not catch it, bring the initial state back
         setTimeout(() => {
           this.setState(prevState => ({
             cards: [...prevState.cards].map(card =>
